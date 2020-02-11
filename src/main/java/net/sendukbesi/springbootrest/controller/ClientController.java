@@ -29,7 +29,7 @@ public class ClientController extends BaseController  {
 	@Autowired
     private ClientRepository clientRepository;
 	
-	@ApiOperation(value = "View a list of available client")
+	@ApiOperation(value = "Get all client")
 	@GetMapping("/client")
     public MessageResponse getAllClient() {
     	List <Client> client = clientRepository.findAll();
@@ -47,7 +47,7 @@ public class ClientController extends BaseController  {
         return new MessageResponse(SendukErrorCodeEnum.SENDUK001, client);
     }
 	
-	@ApiOperation(value = "Get client by Id")
+	@ApiOperation(value = "Create client")
     @PostMapping("/createClient")
     public MessageResponse createClient(Client client) {
     	for (Client existClient : clientRepository.findAll()) {
