@@ -23,7 +23,7 @@ import net.sendukbesi.springbootrest.util.BaseUtil;
 import net.sendukbesi.springbootrest.util.MessageResponse;
 import net.sendukbesi.springbootrest.util.SendukErrorCodeEnum;
 
-@RestController
+@RestController 
 @RequestMapping("/api/v1")
 public class EmployeeController extends BaseController {
 	

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,9 +22,10 @@ import net.sendukbesi.springbootrest.util.BaseUtil;
 import net.sendukbesi.springbootrest.util.MessageResponse;
 import net.sendukbesi.springbootrest.util.SendukErrorCodeEnum;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1")
-@Api(value = "SendukBesi Management System", description = "SendukBesi Management System")
+@Api(value = "SendukBesi Management System")
 public class ClientController extends BaseController  {
 	
 	@Autowired
@@ -52,7 +54,7 @@ public class ClientController extends BaseController  {
     public MessageResponse createClient(Client client) {
     	for (Client existClient : clientRepository.findAll()) {
     		if(existClient.getPhoneNumber() == client.getPhoneNumber()) {
-    			return new MessageResponse(SendukErrorCodeEnum.SENDUK001, "Duplicate Employee.Please use new phone number");
+    			return new MessageResponse(SendukErrorCodeEnum.SENDUK001, "Duplicate Client.Please use new phone number");
     		}
     	}
         clientRepository.save(client);
@@ -75,7 +77,7 @@ public class ClientController extends BaseController  {
     public MessageResponse deleteClient(@PathVariable(value = "id") Long clientId)
     throws ResourceNotFoundException {
     	Client client = clientRepository.findById(clientId)
-            .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + clientId));
+            .orElseThrow(() -> new ResourceNotFoundException("Client not found for this id :: " + clientId));
 
         clientRepository.delete(client);
         return new MessageResponse(SendukErrorCodeEnum.SENDUK001, "delete success");
