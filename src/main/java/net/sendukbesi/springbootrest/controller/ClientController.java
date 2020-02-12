@@ -22,7 +22,8 @@ import net.sendukbesi.springbootrest.util.BaseUtil;
 import net.sendukbesi.springbootrest.util.MessageResponse;
 import net.sendukbesi.springbootrest.util.SendukErrorCodeEnum;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:4200", "https://senduk-angular.herokuapp.com"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1")
 @Api(value = "SendukBesi Management System")
