@@ -23,7 +23,7 @@ import net.sendukbesi.springbootrest.util.MessageResponse;
 import net.sendukbesi.springbootrest.util.SendukErrorCodeEnum;
 
 //@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-@CrossOrigin(origins = {"http://localhost:4200", "https://senduk-angular.herokuapp.com", "https://axrail.herokuapp.com"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:4200", "https://senduk-angular.herokuapp.com"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1")
 @Api(value = "SendukBesi Management System")
@@ -33,6 +33,7 @@ public class ClientController extends BaseController  {
     private ClientRepository clientRepository;
 	
 	@ApiOperation(value = "Get all client")
+	@CrossOrigin
 	@GetMapping("/client")
     public MessageResponse getAllClient() {
     	List <Client> client = clientRepository.findAll();
