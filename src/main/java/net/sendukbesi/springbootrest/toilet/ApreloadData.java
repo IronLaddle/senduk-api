@@ -71,6 +71,7 @@ public class ApreloadData implements ApplicationListener<ContextRefreshedEvent> 
 			toiletUser.setPassword("admin");
 			toiletUser.setPhoneNumber(0111111);
 			toiletUser.setEmail("admin@admin.com");
+			toiletUser.setWallet(50);
 			toiletUserRepository.save(toiletUser);
 		}
 			
