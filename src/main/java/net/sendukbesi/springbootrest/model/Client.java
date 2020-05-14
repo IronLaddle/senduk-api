@@ -19,9 +19,9 @@ public class Client implements Serializable  {
 	private String name;
 	private long phoneNumber;
 	
-	 public Client() {
+	public Client() {
 		 
-	 }
+	}
 
     public Client(String name,long phoneNumber) {
         this.name = name;
