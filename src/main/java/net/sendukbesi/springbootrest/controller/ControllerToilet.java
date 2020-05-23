@@ -1,4 +1,4 @@
-package net.sendukbesi.springbootrest.toilet;
+package net.sendukbesi.springbootrest.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sendukbesi.springbootrest.exception.ResourceNotFoundException;
+import net.sendukbesi.springbootrest.toilet.ModelToilet;
+import net.sendukbesi.springbootrest.toilet.ModelToiletUser;
+import net.sendukbesi.springbootrest.toilet.RepoToilet;
+import net.sendukbesi.springbootrest.toilet.RepoToiletUser;
 import net.sendukbesi.springbootrest.util.BaseController;
 import net.sendukbesi.springbootrest.util.BaseUtil;
 import net.sendukbesi.springbootrest.util.MessageResponse;
